@@ -47,36 +47,6 @@ test("Divison by Zero DeepEqual", function () {
     deepEqual(eval("100/0"), Infinity, "Expected output is Infinity");       
 });
 
-test("Check for Syntax Errors", function () {
-	var flag = false;
-	try{
-		eval("50+(");
-		flag = false;
-	} catch (e) {
-		if(e.message == "Unexpected end of input"){
-			flag = true;			
-		}		
-	}
-    ok(flag,"Expected Syntax Error for the expression (50+( ) ");       
-});
-
-test("Multiple Decimal Error", function(){
-
-	var flag = false;
-	try{
-		eval("9.8.");
-		flag = false;
-	} catch (e) {
-		console.log(e);
-		if(e.message == "Unexpected number" || e.message == "Unexpected end of input"){
-			flag = true;			
-		}		
-	}
-    ok(flag,"Expecting Syntax Error for wrong mathematical expression"); 
-
-
-})
-
 module("Backspace");
 test("Should erase one character from right", function(){
 
